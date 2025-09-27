@@ -76,6 +76,13 @@ body {
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .time {
+    width: 90%;
+    gap: 10px;
+    scale: 0.9;
+  }
+}
 span {
   padding: 10px 5px;
   border-bottom: 1px solid white;
@@ -95,6 +102,16 @@ span {
   -o-border-radius: 12px;
 }
 
+@media (max-width: 768px) {
+  .time div {
+    width: 100px;
+    gap: 5px;
+    scale: 0.9;
+    padding: 5px;
+    /* font-weight: 500; */
+    font-size: 15px;
+  }
+}
 .love {
   width: 400px;
   color: white;
@@ -104,6 +121,13 @@ span {
   align-items: center;
   text-align: center;
     margin-left: 50px;
+}
+@media (max-width: 768px) {
+  .love {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+  }
 }
 
 .love p {
@@ -117,6 +141,11 @@ span {
     animation-duration: 0.8s;
     animation-iteration-count: infinite;
   }
+@media (max-width: 768px) {
+  .love img {
+    margin-top: -30px;
+  }
+}
   
   @keyframes love {
   
