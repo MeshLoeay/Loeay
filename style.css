@@ -81,7 +81,8 @@ body {
 @media (max-width: 768px) {
   .time {
     width: 100%;
-      gap: 5px;
+    max-width: 500px;
+    gap: 5px;
       scale: 0.95;
   }
 }
