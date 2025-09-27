@@ -7,7 +7,7 @@
 body {
   font-family: "Cairo", serif;
   background-color: gray;
-    background-image: url("../We Love Loeay/1.jpg");
+    background-image: url("/1.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   height: 100vh;
