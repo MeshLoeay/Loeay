@@ -8,6 +8,26 @@ body {
   font-family: "Cairo", serif;
 }
 
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
 .parent {
   display: flex;
   justify-content: center;
@@ -25,6 +45,11 @@ body {
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .parent {
+    background-image: url("My-img/2.jpg");
+  }
+}
 .parent::before {
   content: "";
   position: absolute;
