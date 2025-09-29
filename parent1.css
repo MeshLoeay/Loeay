@@ -1,0 +1,143 @@
+/* Start Parent1 */
+.parent1 {
+  padding-top: 100px;
+  margin: 0 auto;
+}
+
+/* Start IMG */
+
+.parent1 .img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  position: relative;
+  background-color: white;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 4px 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.parent1 .img h2 {
+  margin: 0 10px;
+}
+
+.parent1 .img img {
+  animation-name: love-one;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  width: 25px;
+}
+
+@keyframes love-one {
+
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  60% {
+    scale: 1.1;
+  }
+
+  75% {
+    scale: 1;
+  }
+
+  90% {
+    scale: 1.1;
+  }
+}
+
+/* End IMG */
+
+/* Start Your-Age */
+.parent1 .your-age {
+  margin: 0 auto;
+  width: fit-content;
+  text-align: center;
+  margin-top: 40px;
+  z-index: 1;
+  position: relative;
+}
+
+.parent1 .your-age h2 {
+  color: white;
+}
+
+.parent1 .my-age {
+  display: flex;
+  justify-content: center;
+  direction: rtl;
+  margin-top: 15px;
+  color: black;
+  gap: 20px;
+}
+
+.parent1 .my-age input {
+  display: block;
+  border: none;
+  width: 50px;
+  height: 30px;
+  margin-top: 5px;
+  text-align: center;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.parent1 .my-age input:focus,
+.parent1 .age-click:focus {
+  outline: none;
+}
+
+.parent1 .my-age label {
+  color: white;
+  text-align: center;
+}
+
+.parent1 .age-click {
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+#result {
+  color: white;
+  margin-top: 20px;
+  text-align: center;
+  direction: rtl;
+  text-decoration: none;
+}
+
+#result span {
+  text-decoration: none;
+  border: none;
+}
+
+/* اخفاء الاسهم من الانبوت */
+
+/* لإخفاء الأسهم في Chrome و Edge و Safari */
+.parent1 input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* لإخفاء الأسهم في Firefox */
+.parent1 input[type=number] {
+  -moz-appearance: textfield;
+}

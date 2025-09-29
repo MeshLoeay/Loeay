@@ -1,0 +1,13 @@
+    <!-- <div class="parent">
+                <div class="com">COMING SOON</div>
+                <div class="time">
+                  <div class="ch1"><span>7</span>Days</div>
+                  <div class="ch2"><span>24</span>Hours</div>
+                  <div class="ch3"><span>60</span>Minutes</div>
+                  <div class="ch4"><span>60</span>Seconds</div>
+                </div>
+                <div class="love">
+                  <p>We Love Loeay</p>
+                  <img src="My-img/5.png" alt="Heart">
+              </div>
+    </div> -->

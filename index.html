@@ -6,27 +6,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loeay</title>
   <link rel="icon" type="image/png" href="My-img/6.png" sizes="32x32">
+  <!-- CSS Style -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="parent1.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="parent">
-    <div class="com">COMING SOON</div>
-    <div class="time">
-      <div class="ch1"><span>7</span>Days</div>
-      <div class="ch2"><span>24</span>Hours</div>
-      <div class="ch3"><span>60</span>Minutes</div>
-      <div class="ch4"><span>60</span>Seconds</div>
-    </div>
-    <div class="love">
-      <p>We Love Loeay</p>
-      <img src="My-img/5.png" alt="Heart">
-    </div>
+  <div class="grand">
+    <!-- Start Parent -->
+    <!-- End Parent -->
+    <!-- Start Parent 1 -->
+    <div class="parent1 container">
+      <div class="img">
+        <img src="My-img/5.png" alt="">
+        <h2>صلى على محمد</h2>
+        <img src="My-img/5.png" alt="">
+      </div>
+      <div class="your-age">
+        <h2>حاسبة العمر</h2>
+        <div class="my-age">
+          <div>
+            <label for="day">اليوم</label>
+            <input type="number" id="day" placeholder="Day" min="1" max="31" oninput="limitLength(this, 2)">
+          </div>
+  
+          <div>
+            <label for="month">الشهر</label>
+            <input type="number" id="month" placeholder="Month" min="1" max="12" oninput="limitLength(this, 2)">
+          </div>
+  
+          <div>
+            <label for="year">السنة</label>
+            <input type="number" id="year" placeholder="Year" min="1900" max="2100" oninput="limitLength(this, 4)">
+          </div>
+        </div>
+        <br>
+        <button class="age-click" onclick="calcAge()">احسب العمر</button>
+  
+        <div id="result">
+          <p>العمر : <span id="years"></span> سنة</p>
+          <p>بالشهور : <span id="months"></span></p>
+          <p>بالأسابيع : <span id="weeks"></span></p>
+          <p>بالأيام : <span id="days"></span></p>
+          <p>بالساعات : <span id="hours"></span></p>
+          <p>بالدقايق : <span id="minutes"></span></p>
+          <p>بالثواني : <span id="seconds"></span></p>
+        </div>
+</div>
+    <!-- End Parent 1 -->
   </div>
   <script src="main.js"></script>
+  <script src="parent1.js"></script>
 </body>
 
 </html>
