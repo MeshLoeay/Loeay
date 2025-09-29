@@ -1,6 +1,6 @@
 /* Start Parent1 */
 .parent1 {
-  padding-top: 100px;
+  padding-top: 20px;
   margin: 0 auto;
 }
 
@@ -58,10 +58,9 @@
 
 /* Start Your-Age */
 .parent1 .your-age {
-  margin: 0 auto;
+  margin: 20px auto 0;
   width: fit-content;
   text-align: center;
-  margin-top: 40px;
   z-index: 1;
   position: relative;
 }
@@ -74,7 +73,7 @@
   display: flex;
   justify-content: center;
   direction: rtl;
-  margin-top: 15px;
+  /* margin-top: 15px; */
   color: black;
   gap: 20px;
 }
@@ -140,4 +139,9 @@ input[type=number]::-webkit-outer-spin-button {
 /* لإخفاء الأسهم في Firefox */
 .parent1 input[type=number] {
   -moz-appearance: textfield;
+}
+/* اللى فاضل على عيد ميلادك */
+
+.birthdayLeft {
+  font-size: 15px;
 }
