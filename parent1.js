@@ -12,8 +12,7 @@ function calcAge() {
   let now = new Date();
 
   if (birthDate > now) {
-    // alert("تاريخ الميلاد أكبر من التاريخ الحالي!");
-    alert("و دى نحسبهالك ازاى");
+    alert("و دى نحسبهالك ازاى بذكائك");
     return;
   }
 
@@ -34,4 +33,24 @@ function calcAge() {
   document.getElementById("hours").textContent = hours.toLocaleString();
   document.getElementById("minutes").textContent = minutes.toLocaleString();
   document.getElementById("seconds").textContent = seconds.toLocaleString();
+
+  // -------------------------------
+  // حساب العمر بالتفصيل (سنة + شهر + يوم)
+  // -------------------------------
+  let y = now.getFullYear() - birthDate.getFullYear();
+  let m = now.getMonth() - birthDate.getMonth();
+  let d = now.getDate() - birthDate.getDate();
+
+  if (d < 0) {
+    m--;
+    d += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+  }
+  if (m < 0) {
+    y--;
+    m += 12;
+  }
+
+  document.getElementById(
+    "finalAge"
+  ).innerHTML = `<h3>عمرك ${y} سنة و ${m} شهر و ${d} يوم</h3>`;
 }
