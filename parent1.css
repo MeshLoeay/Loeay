@@ -106,8 +106,8 @@
 .parent1 .age-click {
   border: none;
   cursor: pointer;
-  font-size: 17px;
   padding: 5px 10px;
+  font-size: 17px;
   border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
