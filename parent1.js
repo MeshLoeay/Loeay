@@ -108,5 +108,5 @@ function calcAge() {
     msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${monthsLeft} شهر و ${daysLeft} يوم 🎉🎂`;
   }
 
-  document.getElementById("birthdayLeft").innerHTML = `<h4>${msg}</h4>`;
+  document.getElementById("birthdayLeft").innerHTML = `<h5>${msg}</h5>`;
 }
