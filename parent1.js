@@ -1,3 +1,9 @@
+function limitLength(input, maxLength) {
+  if (input.value.length > maxLength) {
+    input.value = input.value.slice(0, maxLength);
+  }
+}
+
 function calcAge() {
   let day = document.getElementById("day").value;
   let month = document.getElementById("month").value;
@@ -50,36 +56,39 @@ function calcAge() {
     m += 12;
   }
 
-document.getElementById("finalAge").innerHTML = `
-  <h3>عمرك ${y} سنة و ${m} شهر و ${d} يوم</h3>
-  <h4>يعني إنت عايش بقالك كتير 😂😂</h4>
-`;
+  // صياغة النص (لو مفيش شهور أو أيام ما يظهرهمش)
+  let ageText = `عمرك ${y} سنة`;
+  if (m > 0) ageText += ` و ${m} شهر`;
+  if (d > 0) ageText += ` و ${d} يوم`;
 
-// -------------------------------
-// حساب المدة المتبقية لعيد الميلاد القادم 🎂
-// -------------------------------
-let nextBirthday = new Date(
-  now.getFullYear(),
-  birthDate.getMonth(),
-  birthDate.getDate()
-);
+  document.getElementById("finalAge").innerHTML = `
+    <h3>${ageText}</h3>
+  `;
 
-// لو عيد الميلاد فات السنة دي -> نخليه السنة الجاية
-if (nextBirthday < now) {
-  nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
-}
+  // -------------------------------
+  // حساب المدة المتبقية لعيد الميلاد القادم 🎂
+  // -------------------------------
+  let nextBirthday = new Date(
+    now.getFullYear(),
+    birthDate.getMonth(),
+    birthDate.getDate()
+  );
 
-let diffToBday = nextBirthday - now;
-let daysToBday = Math.ceil(diffToBday / (1000 * 60 * 60 * 24));
+  if (nextBirthday < now) {
+    nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+  }
 
-let msg = "";
-if (daysToBday <= 30) {
-  msg = `🎂 فاضل على عيد ميلادك ${daysToBday} يوم 🎉`;
-} else {
-  let monthsLeft = Math.floor(daysToBday / 30);
-  let daysLeft = daysToBday % 30;
-  msg = `🎂🎉 فاضل على عيد ميلادك ${monthsLeft} شهر و ${daysLeft} يوم 🎉🎂`;
-}
+  let diffToBday = nextBirthday - now;
+  let daysToBday = Math.ceil(diffToBday / (1000 * 60 * 60 * 24));
 
-document.getElementById("birthdayLeft").innerHTML = `<h4>${msg}</h4>`;
+  let msg = "";
+  if (daysToBday <= 30) {
+    msg = `🎂 فاضل على عيد ميلادك ${daysToBday} يوم 🎉`;
+  } else {
+    let monthsLeft = Math.floor(daysToBday / 30);
+    let daysLeft = daysToBday % 30;
+    msg = `الواحد عايش بقاله كتير يا جدعان 😂😂<br>🎂🎉 فاضل على عيد ميلادك ${monthsLeft} شهر و ${daysLeft} يوم 🎉🎂`;
+  }
+
+  document.getElementById("birthdayLeft").innerHTML = `<h4>${msg}</h4>`;
 }

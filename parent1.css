@@ -1,6 +1,6 @@
 /* Start Parent1 */
 .parent1 {
-  padding-top: 20px;
+  padding-top: 30px;
   margin: 0 auto;
 }
 
@@ -144,4 +144,5 @@ input[type=number]::-webkit-outer-spin-button {
 
 .birthdayLeft {
   font-size: 15px;
+  scale: 0.9;
 }
