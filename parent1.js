@@ -56,10 +56,18 @@ function calcAge() {
     m += 12;
   }
 
-  // صياغة النص (لو مفيش شهور أو أيام ما يظهرهمش)
-  let ageText = `عمرك ${y} سنة`;
-  if (m > 0) ageText += ` و ${m} شهر`;
-  if (d > 0) ageText += ` و ${d} يوم`;
+  let ageText = "";
+
+  if (y >= 1) {
+    ageText = `عمرك ${y} سنة`;
+    if (m > 0) ageText += ` و ${m} شهر`;
+    if (d > 0) ageText += ` و ${d} يوم`;
+  } else if (m >= 1) {
+    ageText = `عمرك ${m} شهر`;
+    if (d > 0) ageText += ` و ${d} يوم`;
+  } else {
+    ageText = `عمرك ${d} يوم`;
+  }
 
   document.getElementById("finalAge").innerHTML = `
     <h3>${ageText}</h3>
