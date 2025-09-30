@@ -143,6 +143,6 @@ input[type=number]::-webkit-outer-spin-button {
 /* اللى فاضل على عيد ميلادك */
 
 .birthdayLeft {
-  font-size: 15px;
-  scale: 0.9;
+  font-size: 16px;
+    max-width: 90%;
 }
