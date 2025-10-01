@@ -66,9 +66,10 @@
 .gender+p {
   width: fit-content;
   margin: 0 auto;
+  font-size: 12px;
   color: red;
   background-color: white;
-  padding: 2px 4px;
+  padding: 0 5px;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -93,7 +94,6 @@
   display: flex;
   justify-content: center;
   direction: rtl;
-  /* margin-top: 15px; */
   color: black;
   gap: 20px;
 }
@@ -126,6 +126,7 @@
   border: none;
   cursor: pointer;
   padding: 5px 10px;
+  margin-top: 15px;
   font-size: 17px;
   border-radius: 12px;
   -webkit-border-radius: 12px;
