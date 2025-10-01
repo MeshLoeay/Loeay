@@ -27,26 +27,36 @@
       </div>
       <div class="your-age">
         <h2>حاسبة العمر</h2>
-<div class="my-age">
-  <div>
-    <label for="day">اليوم</label>
-    <input type="number" id="day" placeholder="Day" min="1" max="31" maxlength="2" oninput="limitLength(this, 2)">
-    </div>
-    
-    <div>
-      <label for="month">الشهر</label>
-    <input type="number" id="month" placeholder="Month" min="1" max="12" maxlength="2" oninput="limitLength(this, 2)">
-    </div>
-    
-    <div>
-      <label for="year">السنة</label>
-    <input type="number" id="year" placeholder="Year" min="1900" max="2100" maxlength="4" oninput="limitLength(this, 4)">
-    </div>
-    </div>
+        <div class="my-age">
+          <div>
+            <label for="day">اليوم</label>
+            <input type="number" id="day" placeholder="Day" min="1" max="31" oninput="limitLength(this, 2)">
+            </div>
+            
+            <div>
+              <label for="month">الشهر</label>
+            <input type="number" id="month" placeholder="Month" min="1" max="12" oninput="limitLength(this, 2)">
+            </div>
+            
+            <div>
+              <label for="year">السنة</label>
+            <input type="number" id="year" placeholder="Year" min="1900" max="2100" oninput="limitLength(this, 4)">
+            </div>
+            </div>
+            <div class="gender">
+              <div>
+                <label>انثى</label>
+                <input type="radio" name="gender" value="female">
+              </div>
+              <div><label>ذكر</label>
+                <input type="radio" name="gender" value="male">
+              </div>
+            </div>
+            <p class="genderp">اختار لو العمر اصغر من 4 سنوات</p>
 
         <br>
         <button class="age-click" onclick="calcAge()">اضغط هنا لحساب العمر</button>
-  
+
         <div id="result">
           <div id="finalAge"></div>
           <p>العمر : <span id="years"></span> سنة</p>
@@ -58,11 +68,11 @@
           <p>بالثواني : <span id="seconds"></span></p>
           <div id="birthdayLeft"></div>
         </div>
-</div>
-    <!-- End Parent 1 -->
-  </div>
-  <script src="main.js"></script>
-  <script src="parent1.js"></script>
+      </div>
+      <!-- End Parent 1 -->
+      </div>
+    <!-- <script src="main.js"></script> -->
+    <script src="parent1.js"></script>
 </body>
 
 </html>

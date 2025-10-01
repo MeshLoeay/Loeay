@@ -4,7 +4,35 @@ function limitLength(input, maxLength) {
   }
 }
 
+// دوال صياغة النصوص بالعربي بدون أرقام زائدة
+function formatYears(n) {
+  if (n === 1) return "سنة";
+  if (n === 2) return "سنتين";
+  if (n >= 3 && n <= 10) return `${n} سنوات`;
+  return `${n} سنة`;
+}
+
+function formatMonths(n) {
+  if (n === 1) return "شهر";
+  if (n === 2) return "شهرين";
+  if (n >= 3 && n <= 10) return `${n} شهور`;
+  return `${n} شهر`;
+}
+
+function formatDays(n) {
+  if (n === 1) return "يوم";
+  if (n === 2) return "يومين";
+  if (n >= 3 && n <= 10) return `${n} أيام`;
+  return `${n} يوم`;
+}
+
 function calcAge() {
+  // إخفاء العنصر عند الضغط على احسب العمر
+  let genderElement = document.querySelector(".genderp");
+  if (genderElement) {
+    genderElement.style.display = "none";
+  }
+
   let day = document.getElementById("day").value;
   let month = document.getElementById("month").value;
   let year = document.getElementById("year").value;
@@ -56,22 +84,33 @@ function calcAge() {
     m += 12;
   }
 
-  let ageText = "";
+  // قراءة النوع من الراديو أو أي input
+  let gender = document.querySelector('input[name="gender"]:checked')?.value; // "male" أو "female"
+  let prefixText = "";
 
-  if (y >= 1) {
-    ageText = `عمرك ${y} سنة`;
-    if (m > 0) ageText += ` و ${m} شهر`;
-    if (d > 0) ageText += ` و ${d} يوم`;
-  } else if (m >= 1) {
-    ageText = `عمرك ${m} شهر`;
-    if (d > 0) ageText += ` و ${d} يوم`;
+  if (gender === "male" && y < 4) {
+    prefixText =
+      '<span style="color:gold;">❤️🥰 الكتكوت الصغنن تم 🥰❤️</span><br>';
+  } else if (gender === "female" && y < 4) {
+    prefixText =
+      '<span style="color:gold;">❤️🥰 الكتكوته الصغننه تمت 🥰❤️</span><br>';
   } else {
-    ageText = `عمرك ${d} يوم`;
+    prefixText = "عمرك ";
   }
 
-  document.getElementById("finalAge").innerHTML = `
-    <h3>${ageText}</h3>
-  `;
+  let ageText = "";
+  if (y >= 1) {
+    ageText = `${prefixText}${formatYears(y)}`;
+    if (m > 0) ageText += ` و ${formatMonths(m)}`;
+    if (d > 0) ageText += ` و ${formatDays(d)}`;
+  } else if (m >= 1) {
+    ageText = `${prefixText}${formatMonths(m)}`;
+    if (d > 0) ageText += ` و ${formatDays(d)}`;
+  } else {
+    ageText = `${prefixText}${formatDays(d)}`;
+  }
+
+  document.getElementById("finalAge").innerHTML = `<h3>${ageText}</h3>`;
 
   // -------------------------------
   // حساب المدة المتبقية لعيد الميلاد القادم 🎂
@@ -81,31 +120,31 @@ function calcAge() {
     birthDate.getMonth(),
     birthDate.getDate()
   );
-
-  if (nextBirthday < now) {
+  if (nextBirthday < now)
     nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
-  }
-
   let diffToBday = nextBirthday - now;
   let daysToBday = Math.ceil(diffToBday / (1000 * 60 * 60 * 24));
 
   let msg = "";
   let extraLine = "";
 
-  // الشرط الجديد: لو العمر أقل من 18
   if (y < 18) {
     extraLine = `❤️🥰 <span style="color:gold; font-weight:bold;">كل سنة وانتو طيبين</span> 🥰❤️<br>
-  <span style="color:gold; font-weight:bold;">❤️🥰 و عقبال 100 سنه ان شاء الله 🥰❤️</span>`;
+    <span style="color:gold; font-weight:bold;">❤️🥰 و عقبال 100 سنه ان شاء الله 🥰❤️</span>`;
   } else {
     extraLine = "الواحد عايش بقاله كتير يا جدعان 😂😂";
   }
 
   if (daysToBday <= 30) {
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${daysToBday} يوم 🎉🎂`;
+    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatDays(
+      daysToBday
+    )} 🎉🎂`;
   } else {
     let monthsLeft = Math.floor(daysToBday / 30);
     let daysLeft = daysToBday % 30;
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${monthsLeft} شهر و ${daysLeft} يوم 🎉🎂`;
+    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatMonths(
+      monthsLeft
+    )} و ${formatDays(daysLeft)} 🎉🎂`;
   }
 
   document.getElementById("birthdayLeft").innerHTML = `<h5>${msg}</h5>`;
