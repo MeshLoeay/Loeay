@@ -31,6 +31,11 @@ function calcAge() {
   const tortaContainer = document.querySelector(".torta");
   tortaContainer.style.display = "block";
 
+  // إعادة opacity للبالونات للكشف عنها في كل مرة
+  const balloonElement = document.querySelector(".palon");
+  balloonElement.style.opacity = 1;
+  balloonElement.style.transition = ""; // إعادة تعيين أي transition سابقة
+
   // اخفاء نص الاختيار مؤقتًا
   let genderElement = document.querySelector(".genderp");
   if (genderElement) {
@@ -41,27 +46,28 @@ function calcAge() {
   const ageDiv = document.querySelector("#result .age");
   ageDiv.style.opacity = 0;
 
-  // اظهار التورته والكعكة والبالونات كل واحد بكلاس مستقل
+  // اظهار الكعكة والبالونات كل واحد بكلاس مستقل
   const cakeElement = document.querySelector(".cake");
-  const balloonElement = document.querySelector(".palon");
-
-  tortaContainer.classList.add("torta-show");
   cakeElement.classList.add("cake-show");
   balloonElement.classList.add("palon-show");
+  tortaContainer.classList.add("torta-show");
 
   // بعد ثانيتين: اخفاء الكعكة، وإظهار ديف .age تدريجيًا
   setTimeout(() => {
     cakeElement.classList.remove("cake-show");
-
     ageDiv.style.transition = "opacity 0.8s ease-in-out";
     ageDiv.style.opacity = 1; // يظهر بعد التورته
   }, 2000);
 
-  // بعد 14 ثانية: اخفاء البالونات تدريجيًا واخفاء التورته بالكامل
+  // بعد 14 ثانية: اخفاء البالونات تدريجيًا بطريقة ناعمة واخفاء التورته بالكامل
   setTimeout(() => {
-    balloonElement.classList.remove("palon-show");
-    ageDballoonElementiv.style.transition = "opacity 0.8s ease-in-out";
-    tortaContainer.style.display = "none";
+    balloonElement.style.transition = "opacity 1.2s ease-in-out";
+    balloonElement.style.opacity = 0; // يبدأ الاختفاء التدريجي
+    // بعد انتهاء الانتقال نخفي العنصر بالكامل
+    setTimeout(() => {
+      balloonElement.classList.remove("palon-show");
+      tortaContainer.style.display = "none";
+    }, 1200); // نفس مدة transition
   }, 14000);
 
   // قراءة القيم
@@ -100,9 +106,7 @@ function calcAge() {
   document.getElementById("minutes").textContent = minutes.toLocaleString();
   document.getElementById("seconds").textContent = seconds.toLocaleString();
 
-  // -------------------------------
   // حساب العمر بالتفصيل (سنة + شهر + يوم)
-  // -------------------------------
   let y = now.getFullYear() - birthDate.getFullYear();
   let m = now.getMonth() - birthDate.getMonth();
   let d = now.getDate() - birthDate.getDate();
@@ -143,9 +147,7 @@ function calcAge() {
 
   document.getElementById("finalAge").innerHTML = `<h3>${ageText}</h3>`;
 
-  // -------------------------------
   // حساب المدة المتبقية لعيد الميلاد القادم 🎂
-  // -------------------------------
   let nextBirthday = new Date(
     now.getFullYear(),
     birthDate.getMonth(),
@@ -168,13 +170,13 @@ function calcAge() {
   }
 
   if (daysToBday <= 30) {
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادى ${formatDays(
+    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatDays(
       daysToBday
     )} 🎉🎂`;
   } else {
     let monthsLeft = Math.floor(daysToBday / 30);
     let daysLeft = daysToBday % 30;
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادى ${formatMonths(
+    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatMonths(
       monthsLeft
     )} و ${formatDays(daysLeft)} 🎉🎂`;
   }
