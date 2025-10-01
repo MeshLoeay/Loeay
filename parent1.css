@@ -147,6 +147,9 @@
   border: none;
 }
 
+#result .age {
+  opacity: 0;
+}
 /* اخفاء الاسهم من الانبوت */
 
 /* لإخفاء الأسهم في Chrome و Edge و Safari */
@@ -166,4 +169,44 @@ input[type=number]::-webkit-outer-spin-button {
 .birthdayLeft {
   font-size: 16px;
   max-width: 90%;
+}
+/* Torta */
+
+/* التورته كاملة */
+.torta {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* كلاس اظهار التورته */
+.torta-show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* الكعكة */
+.cake {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* اظهار الكعكة */
+.cake-show {
+  opacity: 1;
+}
+
+/* البالونات */
+.palon {
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+
+/* اظهار البالونات */
+.palon-show {
+  opacity: 1;
 }

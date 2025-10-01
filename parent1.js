@@ -27,12 +27,44 @@ function formatDays(n) {
 }
 
 function calcAge() {
-  // إخفاء العنصر عند الضغط على احسب العمر
+  // اظهار التورته عند الضغط على احسب العمر
+  const tortaContainer = document.querySelector(".torta");
+  tortaContainer.style.display = "block";
+
+  // اخفاء نص الاختيار مؤقتًا
   let genderElement = document.querySelector(".genderp");
   if (genderElement) {
     genderElement.style.display = "none";
   }
 
+  // اخفاء ديف .age في البداية
+  const ageDiv = document.querySelector("#result .age");
+  ageDiv.style.opacity = 0;
+
+  // اظهار التورته والكعكة والبالونات كل واحد بكلاس مستقل
+  const cakeElement = document.querySelector(".cake");
+  const balloonElement = document.querySelector(".palon");
+
+  tortaContainer.classList.add("torta-show");
+  cakeElement.classList.add("cake-show");
+  balloonElement.classList.add("palon-show");
+
+  // بعد ثانيتين: اخفاء الكعكة، وإظهار ديف .age تدريجيًا
+  setTimeout(() => {
+    cakeElement.classList.remove("cake-show");
+
+    ageDiv.style.transition = "opacity 0.8s ease-in-out";
+    ageDiv.style.opacity = 1; // يظهر بعد التورته
+  }, 2000);
+
+  // بعد 14 ثانية: اخفاء البالونات تدريجيًا واخفاء التورته بالكامل
+  setTimeout(() => {
+    balloonElement.classList.remove("palon-show");
+    ageDballoonElementiv.style.transition = "opacity 0.8s ease-in-out";
+    tortaContainer.style.display = "none";
+  }, 14000);
+
+  // قراءة القيم
   let day = document.getElementById("day").value;
   let month = document.getElementById("month").value;
   let year = document.getElementById("year").value;
@@ -55,15 +87,15 @@ function calcAge() {
   let seconds = Math.floor(diff / 1000);
   let minutes = Math.floor(seconds / 60);
   let hours = Math.floor(minutes / 60);
-  let days = Math.floor(hours / 24);
-  let weeks = Math.floor(days / 7);
-  let months = Math.floor(days / 30.44);
-  let years = Math.floor(months / 12);
+  let daysDiff = Math.floor(hours / 24);
+  let weeks = Math.floor(daysDiff / 7);
+  let monthsDiff = Math.floor(daysDiff / 30.44);
+  let yearsDiff = Math.floor(monthsDiff / 12);
 
-  document.getElementById("years").textContent = years.toLocaleString();
-  document.getElementById("months").textContent = months.toLocaleString();
+  document.getElementById("years").textContent = yearsDiff.toLocaleString();
+  document.getElementById("months").textContent = monthsDiff.toLocaleString();
   document.getElementById("weeks").textContent = weeks.toLocaleString();
-  document.getElementById("days").textContent = days.toLocaleString();
+  document.getElementById("days").textContent = daysDiff.toLocaleString();
   document.getElementById("hours").textContent = hours.toLocaleString();
   document.getElementById("minutes").textContent = minutes.toLocaleString();
   document.getElementById("seconds").textContent = seconds.toLocaleString();
@@ -84,8 +116,7 @@ function calcAge() {
     m += 12;
   }
 
-  // قراءة النوع من الراديو أو أي input
-  let gender = document.querySelector('input[name="gender"]:checked')?.value; // "male" أو "female"
+  let gender = document.querySelector('input[name="gender"]:checked')?.value;
   let prefixText = "";
 
   if (gender === "male" && y < 4) {
@@ -122,6 +153,7 @@ function calcAge() {
   );
   if (nextBirthday < now)
     nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+
   let diffToBday = nextBirthday - now;
   let daysToBday = Math.ceil(diffToBday / (1000 * 60 * 60 * 24));
 
@@ -136,13 +168,13 @@ function calcAge() {
   }
 
   if (daysToBday <= 30) {
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatDays(
+    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادى ${formatDays(
       daysToBday
     )} 🎉🎂`;
   } else {
     let monthsLeft = Math.floor(daysToBday / 30);
     let daysLeft = daysToBday % 30;
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatMonths(
+    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادى ${formatMonths(
       monthsLeft
     )} و ${formatDays(daysLeft)} 🎉🎂`;
   }

@@ -12,6 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
+  <!--  -->
+  <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
 </head>
 
 <body>
@@ -58,15 +60,27 @@
         <button class="age-click" onclick="calcAge()">اضغط هنا لحساب العمر</button>
 
         <div id="result">
-          <div id="finalAge"></div>
-          <p>العمر : <span id="years"></span> سنة</p>
-          <p>بالشهور : <span id="months"></span></p>
-          <p>بالأسابيع : <span id="weeks"></span></p>
-          <p>بالأيام : <span id="days"></span></p>
-          <p>بالساعات : <span id="hours"></span></p>
-          <p>بالدقايق : <span id="minutes"></span></p>
-          <p>بالثواني : <span id="seconds"></span></p>
-          <div id="birthdayLeft"></div>
+          <div class="age">
+            <div id="finalAge"></div>
+            <p>العمر : <span id="years"></span> سنة</p>
+            <p>بالشهور : <span id="months"></span></p>
+            <p>بالأسابيع : <span id="weeks"></span></p>
+            <p>بالأيام : <span id="days"></span></p>
+            <p>بالساعات : <span id="hours"></span></p>
+            <p>بالدقايق : <span id="minutes"></span></p>
+            <p>بالثواني : <span id="seconds"></span></p>
+            <div id="birthdayLeft"></div>
+          </div>
+          <div class="torta">
+            <div class="palon">
+              <dotlottie-wc src="https://lottie.host/8f86411e-62ad-4265-82f2-090d0013ab30/htVwgBREr1.lottie"
+                style="width: 300px;height: 300px" autoplay loop>
+            </div>
+            <div class="cake">
+              </dotlottie-wc><dotlottie-wc src="https://lottie.host/9dea8efc-7766-403d-99bf-ff21432450cb/7Hj4pHv7ML.lottie"
+                style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
+            </div>
+          </div>
         </div>
       </div>
       <!-- End Parent 1 -->
