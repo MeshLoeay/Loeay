@@ -39,16 +39,18 @@
 .back-to ul li:first-child a::before {
   content: "";
   position: absolute;
-  left: -30px;
-  border: 15px solid;
+    top: 2px;
+      left: -23px;
+      border: 12px solid;
   border-color: transparent red transparent transparent;
 }
 
 .back-to ul li:last-child a::before {
   content: "";
   position: absolute;
-  right: -30px;
-  border: 15px solid;
+  top: 2px;
+    right: -23px;
+    border: 12px solid;
   border-color: transparent transparent transparent red;
 }
 
