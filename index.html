@@ -33,35 +33,36 @@
           <div>
             <label for="day">اليوم</label>
             <input type="number" id="day" placeholder="Day" min="1" max="31" oninput="limitLength(this, 2)">
-            </div>
-            
-            <div>
-              <label for="month">الشهر</label>
+          </div>
+          
+          <div>
+            <label for="month">الشهر</label>
             <input type="number" id="month" placeholder="Month" min="1" max="12" oninput="limitLength(this, 2)">
-            </div>
-            
-            <div>
-              <label for="year">السنة</label>
+          </div>
+          
+          <div>
+            <label for="year">السنة</label>
             <input type="number" id="year" placeholder="Year" min="1900" max="2100" oninput="limitLength(this, 4)">
+          </div>
+          </div>
+          <div class="gender">
+            <div>
+              <label>انثى</label>
+              <input type="radio" name="gender" value="female">
             </div>
-            </div>
-            <div class="gender">
-              <div>
-                <label>انثى</label>
-                <input type="radio" name="gender" value="female">
-              </div>
-              <div><label>ذكر</label>
-                <input type="radio" name="gender" value="male">
-              </div>
-            </div>
-            <p class="genderp">اختار لو العمر اصغر من 4 سنوات</p>
+          <div>
+            <label>ذكر</label>
+            <input type="radio" name="gender" value="male">
+          </div>
+          </div>
+          <p class="genderp">اختار لو العمر اصغر من 4 سنوات</p>
 
         <button class="age-click" onclick="calcAge()">اضغط هنا لحساب العمر</button>
 
         <div id="result">
           <div class="age">
             <div id="finalAge"></div>
-            <p>العمر : <span id="years"></span></p>
+            <p>العمر : <span id="years"></span> سنة</p>
             <p>بالشهور : <span id="months"></span></p>
             <p>بالأسابيع : <span id="weeks"></span></p>
             <p>بالأيام : <span id="days"></span></p>
@@ -73,17 +74,18 @@
           <div class="torta">
             <div class="palon">
               <dotlottie-wc src="https://lottie.host/8f86411e-62ad-4265-82f2-090d0013ab30/htVwgBREr1.lottie"
-                style="width: 300px;height: 300px" autoplay loop>
+                style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
             </div>
             <div class="cake">
-              </dotlottie-wc><dotlottie-wc src="https://lottie.host/9dea8efc-7766-403d-99bf-ff21432450cb/7Hj4pHv7ML.lottie"
+              <dotlottie-wc src="https://lottie.host/9dea8efc-7766-403d-99bf-ff21432450cb/7Hj4pHv7ML.lottie"
                 style="width: 300px;height: 300px" autoplay loop></dotlottie-wc>
             </div>
           </div>
         </div>
       </div>
-      <!-- End Parent 1 -->
-      </div>
+    </div>
+    <!-- End Parent 1 -->
+    </div>
     <!-- <script src="main.js"></script> -->
     <script src="parent1.js"></script>
 </body>
