@@ -29,12 +29,14 @@ function formatDays(n) {
 function calcAge() {
   // اظهار التورته عند الضغط على احسب العمر
   const tortaContainer = document.querySelector(".torta");
-  tortaContainer.style.display = "block";
+  if (tortaContainer) tortaContainer.style.display = "block";
 
-  // إعادة opacity للبالونات للكشف عنها في كل مرة
+  // إعادة opacity للبالونات للكشف عنها في كل مرة (لو موجود)
   const balloonElement = document.querySelector(".palon");
-  balloonElement.style.opacity = 1;
-  balloonElement.style.transition = ""; // إعادة تعيين أي transition سابقة
+  if (balloonElement) {
+    balloonElement.style.opacity = 1;
+    balloonElement.style.transition = ""; // إعادة تعيين أي transition سابقة
+  }
 
   // اخفاء نص الاختيار مؤقتًا
   let genderElement = document.querySelector(".genderp");
@@ -42,38 +44,42 @@ function calcAge() {
     genderElement.style.display = "none";
   }
 
-  // اخفاء ديف .age في البداية
+  // اخفاء ديف .age في البداية (لو موجود)
   const ageDiv = document.querySelector("#result .age");
-  ageDiv.style.opacity = 0;
+  if (ageDiv) ageDiv.style.opacity = 0;
 
-  // اظهار الكعكة والبالونات كل واحد بكلاس مستقل
+  // اظهار الكعكة والبالونات كل واحد بكلاس مستقل (لو العناصر موجودة)
   const cakeElement = document.querySelector(".cake");
-  cakeElement.classList.add("cake-show");
-  balloonElement.classList.add("palon-show");
-  tortaContainer.classList.add("torta-show");
+  if (cakeElement) cakeElement.classList.add("cake-show");
+  if (balloonElement) balloonElement.classList.add("palon-show");
+  if (tortaContainer) tortaContainer.classList.add("torta-show");
 
   // بعد ثانيتين: اخفاء الكعكة، وإظهار ديف .age تدريجيًا
   setTimeout(() => {
-    cakeElement.classList.remove("cake-show");
-    ageDiv.style.transition = "opacity 0.8s ease-in-out";
-    ageDiv.style.opacity = 1; // يظهر بعد التورته
+    if (cakeElement) cakeElement.classList.remove("cake-show");
+    if (ageDiv) {
+      ageDiv.style.transition = "opacity 0.8s ease-in-out";
+      ageDiv.style.opacity = 1; // يظهر بعد التورته
+    }
   }, 2000);
 
-  // بعد 14 ثانية: اخفاء البالونات تدريجيًا بطريقة ناعمة واخفاء التورته بالكامل
+  // بعد 14 ثانية: اخفاء البالونات تدريجيًا (إن وُجدت)
   setTimeout(() => {
-    balloonElement.style.transition = "opacity 1.2s ease-in-out";
-    balloonElement.style.opacity = 0; // يبدأ الاختفاء التدريجي
-    // بعد انتهاء الانتقال نخفي العنصر بالكامل
-    setTimeout(() => {
-      balloonElement.classList.remove("palon-show");
-      tortaContainer.style.display = "none";
-    }, 1200); // نفس مدة transition
+    if (balloonElement) {
+      balloonElement.style.transition = "opacity 1.2s ease-in-out";
+      balloonElement.style.opacity = 0; // يبدأ الاختفاء التدريجي
+      // بعد انتهاء الانتقال نخفي العنصر بالكامل
+      setTimeout(() => {
+        if (balloonElement) balloonElement.classList.remove("palon-show");
+        if (tortaContainer) tortaContainer.style.display = "none";
+      }, 1200); // نفس مدة transition
+    }
   }, 14000);
 
   // قراءة القيم
-  let day = document.getElementById("day").value;
-  let month = document.getElementById("month").value;
-  let year = document.getElementById("year").value;
+  let day = Number(document.getElementById("day").value);
+  let month = Number(document.getElementById("month").value);
+  let year = Number(document.getElementById("year").value);
 
   if (!day || !month || !year) {
     alert("اجى انا اكتبلك تاريخك بالمره");
@@ -83,21 +89,63 @@ function calcAge() {
   let birthDate = new Date(year, month - 1, day);
   let now = new Date();
 
+  if (isNaN(birthDate.getTime())) {
+    alert("التاريخ اللي كتبته غير صالح");
+    return;
+  }
+
   if (birthDate > now) {
     alert("و دى نحسبهالك ازاى بذكائك");
     return;
   }
 
-  let diff = now - birthDate;
+  // حساب الفروق الزمنية (ميلي ثانية)
+  let diffMs = now.getTime() - birthDate.getTime();
 
-  let seconds = Math.floor(diff / 1000);
+  // ثواني، دقائق، ساعات محسوبة من الفرق الكامل (قد تتضمن جزء من اليوم الحالي)
+  let seconds = Math.floor(diffMs / 1000);
   let minutes = Math.floor(seconds / 60);
   let hours = Math.floor(minutes / 60);
-  let daysDiff = Math.floor(hours / 24);
-  let weeks = Math.floor(daysDiff / 7);
-  let monthsDiff = Math.floor(daysDiff / 30.44);
-  let yearsDiff = Math.floor(monthsDiff / 12);
 
+  // -------------------------------
+  // حساب الأيام باستخدام الفرق بين التواريخ (UTC) لتجنب أخطاء الوقت داخل اليوم
+  // -------------------------------
+  // نحسب الفرق بناءً على منتصف الليل لكل تاريخ (UTC) - هذا يضمن أن "اليوم" محسوب كلياً وليس متأثرًا بالساعة
+  let utcNow = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  let utcBirth = Date.UTC(
+    birthDate.getFullYear(),
+    birthDate.getMonth(),
+    birthDate.getDate()
+  );
+  let daysDiff = Math.floor((utcNow - utcBirth) / (1000 * 60 * 60 * 24)); // عدد الأيام الكاملة منذ الميلاد
+
+  let weeks = Math.floor(daysDiff / 7);
+
+  // -------------------------------
+  // حساب السنوات/الشهور التفصيلي (سنة + شهر + يوم) كما كان في كودك
+  // -------------------------------
+  let y = now.getFullYear() - birthDate.getFullYear();
+  let m = now.getMonth() - birthDate.getMonth();
+  let d = now.getDate() - birthDate.getDate();
+
+  if (d < 0) {
+    m--;
+    // عدد الأيام في الشهر السابق من now
+    d += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
+  }
+  if (m < 0) {
+    y--;
+    m += 12;
+  }
+
+  // -------------------------------
+  // للحصول على التوافق بين "الاجمالي" و "التفصيلي":
+  // استخدم السنوات التفصيلية مباشرة، والشهور الإجمالية تحسب من y و m
+  // -------------------------------
+  let yearsDiff = y;
+  let monthsDiff = y * 12 + m;
+
+  // عرض الأرقام إجمالياً (الأرقام الكلية تحت)
   document.getElementById("years").textContent = yearsDiff.toLocaleString();
   document.getElementById("months").textContent = monthsDiff.toLocaleString();
   document.getElementById("weeks").textContent = weeks.toLocaleString();
@@ -106,20 +154,7 @@ function calcAge() {
   document.getElementById("minutes").textContent = minutes.toLocaleString();
   document.getElementById("seconds").textContent = seconds.toLocaleString();
 
-  // حساب العمر بالتفصيل (سنة + شهر + يوم)
-  let y = now.getFullYear() - birthDate.getFullYear();
-  let m = now.getMonth() - birthDate.getMonth();
-  let d = now.getDate() - birthDate.getDate();
-
-  if (d < 0) {
-    m--;
-    d += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-  }
-  if (m < 0) {
-    y--;
-    m += 12;
-  }
-
+  // صياغة النص المفصل (سنة + شهر + يوم) مع مراعاة استبدال البادئة حسب الجنس (لو مطلوب)
   let gender = document.querySelector('input[name="gender"]:checked')?.value;
   let prefixText = "";
 
@@ -147,18 +182,87 @@ function calcAge() {
 
   document.getElementById("finalAge").innerHTML = `<h3>${ageText}</h3>`;
 
-  // حساب المدة المتبقية لعيد الميلاد القادم 🎂
+  // -------------------------------
+  // حساب المدة المتبقية لعيد الميلاد القادم 🎂 (دقيق تقويمياً)
+  // -------------------------------
+  const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
+  // اليوم عند منتصف الليل (لتجنّب أخطاء الوقت داخل اليوم أو DST)
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  // تاريخ عيد الميلاد في سنة الحالية
   let nextBirthday = new Date(
     now.getFullYear(),
     birthDate.getMonth(),
     birthDate.getDate()
   );
-  if (nextBirthday < now)
+
+  // لو عيد الميلاد قبل اليوم -> نخليه السنة الجاية
+  if (nextBirthday < today) {
     nextBirthday.setFullYear(nextBirthday.getFullYear() + 1);
+  }
 
-  let diffToBday = nextBirthday - now;
-  let daysToBday = Math.ceil(diffToBday / (1000 * 60 * 60 * 24));
+  // الفرق بالمللي ثانية
+  let diffToBday = nextBirthday.getTime() - now.getTime();
 
+  // أيام متبقية محسوبة بدقة (نستخدم UTC للتأكد من تجنّب مشاكل DST)
+  let daysToBday = Math.round(
+    (Date.UTC(
+      nextBirthday.getFullYear(),
+      nextBirthday.getMonth(),
+      nextBirthday.getDate()
+    ) -
+      Date.UTC(today.getFullYear(), today.getMonth(), today.getDate())) /
+      MS_PER_DAY
+  );
+
+  // دالة تضيف شهور مع الحفاظ على "يوم" إن أمكن، وإذا تجاوزت طول الشهر تصغر لآخر يوم في الشهر
+  function addMonthsKeepDay(date, months) {
+    const d = new Date(date.getTime());
+    const day = d.getDate();
+    d.setMonth(d.getMonth() + months);
+    if (d.getDate() !== day) {
+      d.setDate(0); // آخر يوم من الشهر السابق
+    }
+    return d;
+  }
+
+  // نحسب الشهور التقويمية المتبقية (نعد خطوة بخطوة لحد ما نعدي nextBirthday)
+  let monthsLeft = 0;
+  let temp = new Date(today.getTime());
+  while (true) {
+    const nextStep = addMonthsKeepDay(temp, 1);
+    const nextStepUTC = Date.UTC(
+      nextStep.getFullYear(),
+      nextStep.getMonth(),
+      nextStep.getDate()
+    );
+    const nbUTC = Date.UTC(
+      nextBirthday.getFullYear(),
+      nextBirthday.getMonth(),
+      nextBirthday.getDate()
+    );
+    if (nextStepUTC <= nbUTC) {
+      monthsLeft++;
+      temp = nextStep;
+    } else {
+      break;
+    }
+    if (monthsLeft > 120) break; // حماية من حلقة لا نهائية
+  }
+
+  // بعد طرح الشهور التقويمية، نحسب الأيام المتبقية بدقة
+  const daysLeft = Math.round(
+    (Date.UTC(
+      nextBirthday.getFullYear(),
+      nextBirthday.getMonth(),
+      nextBirthday.getDate()
+    ) -
+      Date.UTC(temp.getFullYear(), temp.getMonth(), temp.getDate())) /
+      MS_PER_DAY
+  );
+
+  // رسالة العرض
   let msg = "";
   let extraLine = "";
 
@@ -169,16 +273,41 @@ function calcAge() {
     extraLine = "الواحد عايش بقاله كتير يا جدعان 😂😂";
   }
 
-  if (daysToBday <= 30) {
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatDays(
+  // 🎂 الحالة 1: لو النهارده عيد ميلاده
+  if (
+    daysToBday === 0 &&
+    now.getDate() === birthDate.getDate() &&
+    now.getMonth() === birthDate.getMonth()
+  ) {
+    msg = `${extraLine}<br>
+    <span style="color:gold; font-weight:bold;">❤️🥰 انهارده يوم مش عادى 🥰❤️</span><br>
+    <span style="color:gold; font-weight:bold;">🎂🎉 انهارده عيد ميلادى 🎉🎂</span>`;
+  }
+  // 🎂 الحالة 2: لو باقي أقل من يوم (countdown بالساعات والدقايق والثواني)
+  else if (diffToBday < MS_PER_DAY) {
+    let hoursLeft = Math.floor(diffToBday / (1000 * 60 * 60));
+    let minutesLeft = Math.floor((diffToBday % (1000 * 60 * 60)) / (1000 * 60));
+    let secondsLeft = Math.floor((diffToBday % (1000 * 60)) / 1000);
+
+    msg = `${extraLine}<br>
+    <span style="color:gold; font-weight:bold;">🎂🎉 فاضل على عيد ميلادك ساعات قليلة 🎉🎂</span><br>
+    <span style="color:lightblue; font-weight:bold;">⌛ المدة المتبقية: ${hoursLeft} ساعة و ${minutesLeft} دقيقة و ${secondsLeft} ثانية</span>`;
+  }
+  // 🎂 الحالة 3: لو ≤ 30 يوم → نعرض بالأيام
+  else if (daysToBday <= 30) {
+    msg = `${extraLine}<br>
+    <span style="color:gold; font-weight:bold;">🎂🎉 فاضل على عيد ميلادك ${formatDays(
       daysToBday
-    )} 🎉🎂`;
-  } else {
-    let monthsLeft = Math.floor(daysToBday / 30);
-    let daysLeft = daysToBday % 30;
-    msg = `${extraLine}<br>🎂🎉 فاضل على عيد ميلادك ${formatMonths(
+    )} 🎉🎂</span><br>
+    <span style="color:lightblue; font-weight:bold;">⌛ المدة المتبقية: ${daysToBday} يوم</span>`;
+  }
+  // 🎂 الحالة 4: باقي شهور + أيام
+  else {
+    msg = `${extraLine}<br>
+    <span style="color:gold; font-weight:bold;">🎂🎉 فاضل على عيد ميلادك ${formatMonths(
       monthsLeft
-    )} و ${formatDays(daysLeft)} 🎉🎂`;
+    )} و ${formatDays(daysLeft)} 🎉🎂</span><br>
+    <span style="color:red; font-weight:bold;">⌛ المدة المتبقية: ${daysToBday} يوم</span>`;
   }
 
   document.getElementById("birthdayLeft").innerHTML = `<h5>${msg}</h5>`;
