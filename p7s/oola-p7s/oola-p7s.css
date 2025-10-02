@@ -36,24 +36,16 @@ body {
   scale: 0.8;
 }
 
-.back-to ul li:first-child a {
+.back-to ul li a {
   left: -5px;
 }
 
-.back-to ul li:first-child a::before {
+.back-to ul li a::before {
   content: "";
   position: absolute;
   left: -30px;
   border: 15px solid;
   border-color: transparent red transparent transparent;
-}
-
-.back-to ul li:last-child a::before {
-  content: "";
-  position: absolute;
-  right: -30px;
-  border: 15px solid;
-  border-color: transparent transparent transparent red;
 }
 
 /* End Back-to */
