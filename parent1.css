@@ -2,6 +2,33 @@
 .parent1 {
   padding-top: 30px;
   margin: 0 auto;
+    width: 100%;
+      background-image: url("My-img/1.jpg");
+      background-color: gray;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      background-attachment: fixed;
+      height: 100vh;
+      position: relative;
+    }
+    
+    .parent1::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.600);
+      z-index: 1;
+      left: 0;
+      top: 0;
+    }
+    
+    @media (max-width: 768px) {
+      .parent1 {
+        background-image: url("My-img/2.jpg");
+        background-size: 100% 100%;
+        height: 100vh;
+      }
 }
 
 /* Start IMG */
