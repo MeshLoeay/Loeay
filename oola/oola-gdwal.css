@@ -68,7 +68,7 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 h3 {
@@ -111,7 +111,7 @@ th {
     transform-origin: left top;
     position: absolute;
     top: 8px;
-      right: -720px;
+    left: 365px;
       transform: rotate(90deg);
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);
