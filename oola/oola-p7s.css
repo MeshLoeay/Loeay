@@ -14,6 +14,7 @@ body {
   padding: 10px;
   display: flex;
   justify-content: space-between;
+  position: relative;
 }
 
 .back-to ul li {
@@ -25,6 +26,8 @@ body {
   font-size: 15px;
   display: block;
   background-color: red;
+  position: relative;
+  z-index: 10;
   color: white;
   padding: 5px 10px;
   border-radius: 12px;
@@ -59,7 +62,6 @@ body {
   background-attachment: fixed;
   height: 100vh;
   position: relative;
-  z-index: -3;
 }
 
 .oola-p7s::before {
@@ -67,7 +69,7 @@ body {
   top: 0;
   left: 0;
   position: absolute;
-  z-index: -2;
+  z-index: 0;
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.700);
@@ -80,6 +82,7 @@ body {
 }
 
 .oola-p7s .two {
+  position: relative;
   padding-top: 30px;
   margin: 0 auto;
   text-align: center;

@@ -39,9 +39,9 @@
 .back-to ul li:first-child a::before {
   content: "";
   position: absolute;
-    top: 2px;
-      left: -23px;
-      border: 12px solid;
+  top: 2px;
+  left: -23px;
+  border: 12px solid;
   border-color: transparent red transparent transparent;
 }
 
@@ -49,9 +49,18 @@
   content: "";
   position: absolute;
   top: 2px;
-    right: -23px;
-    border: 12px solid;
+  right: -23px;
+  border: 12px solid;
   border-color: transparent transparent transparent red;
 }
 
 /* End Back-to */
+
+.oola-p7s-one .one {
+  width: fit-content;
+  text-align: center;
+}
+
+.oola-p7s-one .one img {
+  width: 90%;
+}
