@@ -11,7 +11,7 @@ body {
 
 /* Start Back-to */
 .back-to ul {
-  padding: 10px 5px;
+  padding: 0 5px;
   width: fit-content;
   margin-right: auto;
 }
@@ -68,6 +68,7 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
+  /* overflow: hidden; */
 }
 
 h3 {
@@ -105,16 +106,18 @@ th {
 /* للموبايل */
 @media (max-width: 768px) {
   .rotate-container {
-    width: 100vh;
-    height: 90vh;
-    transform: rotate(90deg);
+    width: 98vh;
+      height: 20vw;
     transform-origin: left top;
     position: absolute;
-    top: 0;
-    left: 0;
-    background: white;
-    overflow: hidden;
-  }
+    top: 8px;
+      right: -720px;
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+    }
 
   table {
     width: 100%;
