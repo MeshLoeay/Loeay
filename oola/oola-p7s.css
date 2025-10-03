@@ -11,10 +11,9 @@ body {
 /* Start Back-to */
 
 .back-to ul {
-  padding: 10px;
+  padding: 10px 5px;
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
 
 .back-to ul li {
@@ -26,8 +25,6 @@ body {
   font-size: 15px;
   display: block;
   background-color: red;
-  position: relative;
-  z-index: 10;
   color: white;
   padding: 5px 10px;
   border-radius: 12px;
@@ -38,7 +35,7 @@ body {
   position: relative;
   scale: 0.8;
 }
-
+/* 
 .back-to ul li a {
   left: -5px;
 }
@@ -51,8 +48,12 @@ body {
   border-color: transparent red transparent transparent;
 }
 
+*/
 /* End Back-to */
 
+.oola-p7s .p7s h3 a p {
+  font-size: 13px;
+}
 .oola-p7s {
   width: 100%;
   background-image: url("1.jpg");

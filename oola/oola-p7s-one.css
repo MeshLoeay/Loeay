@@ -4,10 +4,12 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Cairo", serif;
+}
 /* Start Back-to */
-
 .back-to ul {
-  padding: 10px;
+  padding: 10px 5px;
   display: flex;
   justify-content: space-between;
 }
@@ -31,7 +33,7 @@
   position: relative;
   scale: 0.8;
 }
-
+/* 
 .back-to ul li:first-child a {
   left: -5px;
 }
@@ -54,13 +56,51 @@
   border-color: transparent transparent transparent red;
 }
 
+*/
 /* End Back-to */
 
 .oola-p7s-one .one {
   width: fit-content;
   text-align: center;
+  position: relative;
+  }
+  
+  .oola-p7s-one .one h2 {
+    color: rgb(0, 0, 165);
+    margin-bottom: 10px;
+  }
+  
+  .oola-p7s-one .one div {
+    position: relative;
+    counter-increment: count;
+  }
+  
+  .oola-p7s-one .one div::before {
+    content: counter(count);
+    position: absolute;
+    z-index: 15;
+    left: 50%;
+    bottom: 6px;
+    background-color: red;
+    color: white;
+    font-size: 25px;
+    line-height: 1.6;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 .oola-p7s-one .one img {
   width: 90%;
+  margin-bottom: 20px;
 }
