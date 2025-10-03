@@ -80,7 +80,7 @@ body {
     position: absolute;
     z-index: 15;
     left: 50%;
-    bottom: 6px;
+    bottom: 10px;
     background-color: red;
     color: white;
     font-size: 25px;

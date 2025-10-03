@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  direction: rtl;
+}
+
+/* Start Back-to */
+.back-to ul {
+  padding: 10px 5px;
+  width: fit-content;
+  margin-right: auto;
+}
+
+.back-to ul li {
+  list-style: none;
+}
+
+.back-to ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  background-color: red;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  position: relative;
+  scale: 0.8;
+}
+
+/* 
+.back-to ul li:first-child a {
+  left: -5px;
+}
+
+.back-to ul li:first-child a::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -23px;
+  border: 12px solid;
+  border-color: transparent red transparent transparent;
+}
+
+.back-to ul li:last-child a::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  right: -23px;
+  border: 12px solid;
+  border-color: transparent transparent transparent red;
+}
+
+*/
+/* End Back-to */
+
+
+body {
+  font-family: "Tahoma", Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  margin: 15px 0;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 10px auto;
+  width: 90%;
+  font-size: 14px;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid black;
+  padding: 6px 8px;
+}
+
+th {
+  background: #ccc;
+  font-weight: bold;
+}
+
+.day-col {
+  background: #eee;
+  font-weight: bold;
+}
+
+.time-col {
+  font-weight: bold;
+}
+
+/* للموبايل */
+@media (max-width: 768px) {
+  .rotate-container {
+    width: 100vh;
+    height: 90vh;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+    overflow: hidden;
+  }
+
+  table {
+    width: 100%;
+    font-size: 11px;
+  }
+
+  th,
+  td {
+    padding: 4px 5px;
+  }
+}
