@@ -43,6 +43,7 @@ body {
   background-color: red;
   font-size: 17px;
   border: none;
+  outline: none;
   cursor: pointer;
   right: 15px;
   bottom: 15px;
