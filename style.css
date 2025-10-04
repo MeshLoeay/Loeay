@@ -51,6 +51,67 @@ body {
   -o-border-radius: 12px;
 }
 
+/* Ta7t */
+
+.ta7t {
+  position: absolute;
+  z-index: 100;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.ta7t h3 {
+  color: red;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.ta7t span {
+  margin-top: 20px;
+  color: white;
+  display: block;
+  font-size: 30px;
+  border: none;
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  animation-name: ta7t;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes ta7t {
+
+  0%,
+  40%,
+  100% {
+    margin-top: 20px;
+  }
+
+  60% {
+    margin-top: 40px;
+  }
+
+  75% {
+    margin-top: 20px;
+  }
+
+  90% {
+    margin-top: 40px;
+  }
+}
 /* End Tal3ny */
 .parent {
   display: flex;
