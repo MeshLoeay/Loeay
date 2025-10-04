@@ -6,11 +6,12 @@
 
 body {
   /* font-family: "Cairo", sans-serif; */
-    font-family: "Tahoma", Arial, sans-serif;
+  font-family: "Tahoma", Arial, sans-serif;
   direction: rtl;
   text-align: center;
-    overflow: hidden;
+  overflow: hidden;
 }
+
 /* Start Back-to */
 .back-to ul {
   padding: 0 5px;
@@ -100,18 +101,22 @@ th {
 @media (max-width: 768px) {
   .rotate-container {
     width: 98vh;
-      height: 20vw;
+    height: 20vw;
     transform-origin: left top;
     position: absolute;
     top: 8px;
     left: 355px;
-      transform: rotate(90deg);
+    scale: 0.9;
+    transform: rotate(90deg);
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
     }
 
+    .rotate-container h3 {
+      margin: 10px;
+    }
   table {
     width: 100%;
     font-size: 11px;

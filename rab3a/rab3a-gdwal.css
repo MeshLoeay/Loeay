@@ -106,13 +106,16 @@ th {
     position: absolute;
     top: 8px;
     left: 355px;
+    scale: 0.9;
       transform: rotate(90deg);
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
     }
-
+.rotate-container h3 {
+  margin: 10px;
+}
   table {
     width: 100%;
     font-size: 11px;
