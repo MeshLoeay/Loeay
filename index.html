@@ -22,6 +22,9 @@
 
 <body>
   <div class="grand">
+    <!-- Tal3ny -->
+    <button class="tal3ny">طلعنى</button>
+    <!-- End Tal3ny -->
     <!-- Start Parent -->
     <!-- End Parent -->
     <!-- Start Parent 1 -->
@@ -141,6 +144,23 @@
       </div>
       <!-- End Parent 2 -->
     <!-- <script src="main.js"></script> -->
+    <script>
+      let btn = document.querySelector("button");
+      window.onscroll = function () {
+        if (window.scrollY >= 400) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      };
+      btn.onclick = function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+
+      }
+    </script>
     <script src="parent1.js"></script>
 </body>
 </html>
