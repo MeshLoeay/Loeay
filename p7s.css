@@ -35,6 +35,7 @@ body {
   position: relative;
   scale: 0.8;
 }
+
 /* 
 .back-to ul li a {
   left: -5px;
@@ -51,12 +52,13 @@ body {
 */
 /* End Back-to */
 
-.oola-p7s .p7s h3 a p {
+.edit-p7s .p7s h3 a p {
   font-size: 13px;
 }
-.oola-p7s {
+
+.edit-p7s {
   width: 100%;
-  background-image: url("1.jpg");
+  background-image: url("My-img/1.jpg");
   background-color: gray;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -64,7 +66,7 @@ body {
   position: relative;
 }
 
-.oola-p7s::before {
+.edit-p7s::before {
   content: "";
   top: 0;
   left: 0;
@@ -76,12 +78,12 @@ body {
 }
 
 @media (max-width: 768px) {
-  .oola-p7s {
-    background-image: url("2.jpg");
+  .edit-p7s {
+    background-image: url("My-img/2.jpg");
   }
 }
 
-.oola-p7s .two {
+.edit-p7s .two {
   position: relative;
   padding-top: 30px;
   margin: 0 auto;
@@ -93,7 +95,7 @@ body {
   -o-border-radius: 12px;
 }
 
-.oola-p7s .two h2 {
+.edit-p7s .two h2 {
   color: rgb(255, 0, 43);
   background-color: white;
   padding: 10px 20px;
@@ -106,40 +108,40 @@ body {
   -o-border-radius: 12px;
 }
 
-.oola-p7s .two .p7s {
+.edit-p7s .two .p7s {
   margin-top: -30px;
 }
 
-.oola-p7s .two .p7s ul li {
+.edit-p7s .two .p7s ul li {
   list-style: none;
   margin: 0 auto 20px;
-    width: 90%;
+  width: 90%;
 }
 
-.oola-p7s .two .p7s ul li:first-child {
+.edit-p7s .two .p7s ul li:first-child {
   margin-top: 80px;
 }
 
-.oola-p7s .two .p7s ul li a {
+.edit-p7s .two .p7s ul li a {
   display: block;
   text-decoration: none;
   background-color: white;
   padding: 5px 10px;
   width: fit-content;
   margin: 0 auto 20px;
-    border-radius: 12px;
-    -webkit-border-radius: 12px;
-    -moz-border-radius: 12px;
-    -ms-border-radius: 12px;
-    -o-border-radius: 12px;
-  }
-  
-  .oola-p7s h3.ttt {
-    width: fit-content;
-    font-size: 15px;
-    margin: 0 auto 30px;
-    color: blueviolet;
-    background-color: white;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.edit-p7s h3.ttt {
+  width: fit-content;
+  font-size: 15px;
+  margin: 0 auto 30px;
+  color: blueviolet;
+  background-color: white;
   border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;

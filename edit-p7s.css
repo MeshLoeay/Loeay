@@ -35,6 +35,28 @@ body {
   scale: 0.8;
 }
 
+/* Start Tal3ny */
+
+.tal3ny {
+  position: fixed;
+  display: none;
+  z-index: 1000;
+  color: white;
+  background-color: red;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+  right: 15px;
+  bottom: 15px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+/* End Tal3ny */
 /* 
 .back-to ul li:first-child a {
   left: -5px;

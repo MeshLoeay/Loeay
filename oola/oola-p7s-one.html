@@ -13,6 +13,9 @@
 
 <body>
   <div class="edit-p7s-one container">
+        <!-- Tal3ny -->
+        <button class="tal3ny">طلعنى</button>
+        <!-- End Tal3ny -->
     <div class="back-to">
       <ul>
         <li><a href="../index.html">الرجوع للقائمه الرئيسيه</a></li>
@@ -39,6 +42,23 @@
 
     </div>
   </div>
+      <script>
+        let btn = document.querySelector("button");
+        window.onscroll = function () {
+          if (window.scrollY >= 400) {
+            btn.style.display = "block";
+          } else {
+            btn.style.display = "none";
+          }
+        };
+        btn.onclick = function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+
+        }
+      </script>
 </body>
 
 </html>
