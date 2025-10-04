@@ -5,8 +5,11 @@
 }
 
 body {
-  font-family: "Cairo", sans-serif;
+  /* font-family: "Cairo", sans-serif; */
+    font-family: "Tahoma", Arial, sans-serif;
   direction: rtl;
+  text-align: center;
+    overflow: hidden;
 }
 
 /* Start Back-to */
@@ -62,15 +65,6 @@ body {
 */
 /* End Back-to */
 
-
-body {
-  font-family: "Tahoma", Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 h3 {
   margin: 15px 0;
 }
@@ -107,7 +101,7 @@ th {
 @media (max-width: 768px) {
   .rotate-container {
     width: 98vh;
-      height: 20vw;
+    height: 20vw;
     transform-origin: left top;
     position: absolute;
     top: 8px;

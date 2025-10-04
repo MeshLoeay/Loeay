@@ -5,15 +5,20 @@
 }
 
 body {
-  font-family: "Cairo", sans-serif;
+  /* font-family: "Cairo", sans-serif; */
+    font-family: "Tahoma", Arial, sans-serif;
   direction: rtl;
+  text-align: center;
+    overflow: hidden;
+    /* -webkit-tap-highlight-color: transparent; */
 }
 
 /* Start Back-to */
 .back-to ul {
   padding: 0 5px;
   width: fit-content;
-  margin-right: auto;
+  position: absolute;
+    left: -20px;
 }
 
 .back-to ul li {
@@ -62,15 +67,6 @@ body {
 */
 /* End Back-to */
 
-
-body {
-  font-family: "Tahoma", Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
 h3 {
   margin: 15px 0;
 }
@@ -107,12 +103,12 @@ th {
 @media (max-width: 768px) {
   .rotate-container {
     width: 98vh;
-      height: 20vw;
+    height: 20vw;
     transform-origin: left top;
     position: absolute;
     top: 8px;
     left: 355px;
-      transform: rotate(90deg);
+    transform: rotate(90deg);
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);
       -ms-transform: rotate(90deg);

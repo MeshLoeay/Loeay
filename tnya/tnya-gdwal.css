@@ -5,10 +5,12 @@
 }
 
 body {
-  font-family: "Cairo", sans-serif;
+  /* font-family: "Cairo", sans-serif; */
+    font-family: "Tahoma", Arial, sans-serif;
   direction: rtl;
+  text-align: center;
+    overflow: hidden;
 }
-
 /* Start Back-to */
 .back-to ul {
   padding: 0 5px;
@@ -61,15 +63,6 @@ body {
 
 */
 /* End Back-to */
-
-
-body {
-  font-family: "Tahoma", Arial, sans-serif;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
 h3 {
   margin: 15px 0;
