@@ -7,6 +7,7 @@
 body {
   font-family: "Cairo", serif;
 }
+
 /* Start Back-to */
 .back-to ul {
   padding: 10px 5px;
@@ -33,6 +34,7 @@ body {
   position: relative;
   scale: 0.8;
 }
+
 /* 
 .back-to ul li:first-child a {
   left: -5px;
@@ -59,49 +61,72 @@ body {
 */
 /* End Back-to */
 
-.oola-p7s-one .one {
+.edit-p7s-one .one {
   width: fit-content;
   text-align: center;
   position: relative;
-  }
-  
-  .oola-p7s-one .one h2 {
-    color: rgb(0, 0, 165);
-    margin-bottom: 10px;
-  }
-  
-  .oola-p7s-one .one div {
-    position: relative;
-    counter-increment: count;
-  }
-  
-  .oola-p7s-one .one div::before {
-    content: counter(count);
-    position: absolute;
-    z-index: 15;
-    left: 50%;
-    bottom: 10px;
-    background-color: red;
-    color: white;
-    font-size: 25px;
-      display: flex;
-        justify-content: center;
-        align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    transform: translateX(-50%);
-    -webkit-transform: translateX(-50%);
-    -moz-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    -o-transform: translateX(-50%);
+  margin: 0 auto;
 }
 
-.oola-p7s-one .one img {
+.edit-p7s-one p {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.edit-p7s-one p:last-of-type {
+  margin-bottom: 10px;
+}
+
+.edit-p7s-one .one h2 {
+  color: rgb(0, 0, 165);
+  margin-bottom: 10px;
+}
+
+.edit-p7s-one .one div {
+  position: relative;
+  counter-increment: count;
+}
+
+.edit-p7s-one .one div::before {
+  content: counter(count);
+  position: absolute;
+  z-index: 15;
+  left: 50%;
+  bottom: 10px;
+  background-color: red;
+  color: white;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.edit-p7s-one .one img {
   width: 90%;
   margin-bottom: 20px;
+}
+
+.edit-p7s-one h3.ttt {
+  width: 90%;
+  font-size: 15px;
+  margin: 0 auto 30px;
+  color: blueviolet;
+}
+
+.sss {
+  color: red;
+  margin-bottom: 10px;
 }

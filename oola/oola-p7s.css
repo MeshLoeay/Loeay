@@ -61,7 +61,6 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   background-attachment: fixed;
-  height: 100vh;
   position: relative;
 }
 
@@ -113,10 +112,12 @@ body {
 
 .oola-p7s .two .p7s ul li {
   list-style: none;
+  margin: 0 auto 20px;
+    width: 90%;
 }
 
-.oola-p7s .two h3 {
-  margin: 70px 0 20px;
+.oola-p7s .two .p7s ul li:first-child {
+  margin-top: 80px;
 }
 
 .oola-p7s .two .p7s ul li a {
