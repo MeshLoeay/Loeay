@@ -126,7 +126,20 @@ body {
   background-color: white;
   padding: 5px 10px;
   width: fit-content;
-  margin: 0 auto 20px;
+  margin: 0 auto 30px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+  }
+  
+  .oola-p7s h3.ttt {
+    width: fit-content;
+    font-size: 15px;
+    margin: 0 auto 30px;
+    color: blueviolet;
+    background-color: white;
   border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
