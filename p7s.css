@@ -127,7 +127,7 @@ body {
   text-decoration: none;
   background-color: white;
   padding: 5px 10px;
-  width: fit-content;
+  width: 90%;
   margin: 0 auto 20px;
   border-radius: 12px;
   -webkit-border-radius: 12px;
@@ -138,6 +138,7 @@ body {
 
 .edit-p7s h3.ttt {
   width: fit-content;
+  position: relative;
   font-size: 15px;
   margin: 0 auto 30px;
   color: blueviolet;

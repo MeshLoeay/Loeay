@@ -76,6 +76,7 @@ body {
 .ta7t h3 {
   color: red;
   background-color: white;
+  font-size: 14px;
   padding: 5px 10px;
   border-radius: 12px;
   -webkit-border-radius: 12px;
