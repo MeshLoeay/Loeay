@@ -20,13 +20,14 @@
       -webkit-tap-highlight-color: transparent;
     </style> -->
     <style>
+
       /* Start Me */
       .parent1 .me {
         font-family: serif;
         position: relative;
         color: white;
         z-index: 10;
-        margin: 75px 0 0 20px;
+        margin: 50px 0 0 20px;
         font-size: 14px;
         text-align: center;
       }
@@ -34,7 +35,21 @@
       .parent1 .me h1 {
         margin-bottom: 90px;
       }
-    
+
+      /* .parent1 .bloody {
+        width: 50%;
+        z-index: 10;
+        position: absolute;
+        top: 75%;
+        left: 50%;
+        transform: translateX(-50%);
+} */
+
+      .world {
+        scale: 0.7;
+        border: none;
+      }
+
       .parent1 .me h2 {
         font-family: "Cairo", serif;
         font-size: 18px;
@@ -103,9 +118,11 @@
         <h2>صلى على محمد</h2>
         <img src="My-img/5.png" alt="">
       </div>
+      <!-- <img src="My-img/bloody3-removebg-preview.png" alt="" class="bloody"> -->
       <div class="me">
         <h1 id="typed1"></h1>
-        <h2>انا لؤى<br>خريج خدمة اجتماعية عام 2019<br>اعمل مهندس برمجيات لدى<br><span class='hacker'>Hacker</span></h2>
+        <h2>انا لؤى<br>خريج خدمة اجتماعية عام 2019<br>اعمل مهندس برمجيات لدى<br><span class='hacker'>Hacker</span>
+        </h2>
         <h2 id="typed2"></h2>
       </div>
       <div class="facebook">
@@ -187,7 +204,7 @@
 
   // Typing
   var typed1 = new Typed('#typed1', {
-    strings: ["Hi, I'm Loeay"],
+    strings: ["Hi, I'm Loeay<br><h3 class='world'>Welcome To My World</h3>"],
     typeSpeed: 70,
     // backSpeed: 0,
     smartBackspace: true, // this is a default
@@ -202,7 +219,7 @@
     // smartBackspace: true, // this is a default
     loop: false,
     showCursor: false,     // يخفي علامة الكتابة (المؤشر)
-    startDelay: 1000
+    startDelay: 3000
 
   });
     </script>
