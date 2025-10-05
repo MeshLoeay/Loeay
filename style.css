@@ -56,7 +56,6 @@ body {
 }
 
 /* Ta7t */
-
 .ta7t {
   position: absolute;
   width: max-content;
@@ -69,7 +68,6 @@ body {
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
-
 .ta7t a {
   text-decoration: none;
 }
