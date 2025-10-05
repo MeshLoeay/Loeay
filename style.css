@@ -60,7 +60,6 @@ body {
   position: absolute;
   width: max-content;
   z-index: 100;
-  scale: 0.75;
   top: 85%;
   left: 50%;
   transform: translateX(-50%);
