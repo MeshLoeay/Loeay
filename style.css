@@ -61,7 +61,7 @@ body {
   position: absolute;
   width: max-content;
   z-index: 100;
-  top: 80%;
+  top: 85%;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
@@ -86,7 +86,7 @@ body {
 }
 
 .ta7t span {
-  margin-top: 40px;
+  margin-top: 10px;
   color: white;
   display: block;
   font-size: 30px;
@@ -106,19 +106,19 @@ body {
   0%,
   40%,
   100% {
-    margin-top: 60px;
+    margin-top: 40px;
   }
 
   60% {
-    margin-top: 80px;
-  }
-
-  75% {
     margin-top: 60px;
   }
 
+  75% {
+    margin-top: 40px;
+  }
+
   90% {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 }
 /* End Tal3ny */
