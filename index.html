@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap" rel="stylesheet">
   <!--  -->
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.8.1/dist/dotlottie-wc.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <!-- <style>
       -webkit-tap-highlight-color: transparent;
     </style> -->
@@ -39,6 +40,13 @@
         <img src="My-img/5.png" alt="">
         <h2>صلى على محمد</h2>
         <img src="My-img/5.png" alt="">
+      </div>
+      <div class="me">
+        <h1 id="typed1"></h1>
+        <h2>انا لؤى</h2>
+        <h2>خريج خدمة اجتماعية عام 2019</h2>
+        <h2>اعمل مهندس برمجيات لدى<br><span class='hacker'>Hacker</span></h2>
+        <h2 id="typed2"></h2>
       </div>
     </div>
     <!-- End Parent 1 -->
@@ -111,6 +119,27 @@
         });
 
       }
+
+  // Typing
+  var typed1 = new Typed('#typed1', {
+    strings: ["Hi, I'm Loeay"],
+    typeSpeed: 70,
+    // backSpeed: 0,
+    smartBackspace: true, // this is a default
+    loop: false,
+    showCursor: false     // يخفي علامة الكتابة (المؤشر)
+
+  });
+  var typed2 = new Typed('#typed2', {
+    strings: ["لو الموقع عجبك<br>متنساش تدعيلى دعوه حلوه<br>❤️ من قلبك ❤️"],
+    typeSpeed: 50,
+    // backSpeed: 0,
+    // smartBackspace: true, // this is a default
+    loop: false,
+    showCursor: false,     // يخفي علامة الكتابة (المؤشر)
+    startDelay: 1000
+
+  });
     </script>
     <!-- <script src="parent1.js"></script> -->
 </body>
