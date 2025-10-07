@@ -145,3 +145,17 @@ body {
   color: red;
   margin-bottom: 10px;
 }
+
+.edit-p7s-one h3.ttt {
+  width: fit-content;
+  position: relative;
+  font-size: 15px;
+  margin: 0 auto 30px;
+  color: blueviolet;
+  background-color: white;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
