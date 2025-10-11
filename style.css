@@ -93,16 +93,15 @@ body {
 }
 
 .ta7t span {
-  margin-top: 10px;
   color: white;
   display: block;
   font-size: 30px;
   border: none;
-  transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
+  transform: rotate(90deg) translateX(-10px);
+    -webkit-transform: rotate(90deg) translateX(-10px);
+    -moz-transform: rotate(90deg) translateX(-10px);
+    -ms-transform: rotate(90deg) translateX(-10px);
+    -o-transform: rotate(90deg) translateX(-10px);
   animation-name: ta7t;
   animation-duration: 1s;
   animation-iteration-count: infinite;
