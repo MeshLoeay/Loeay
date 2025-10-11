@@ -135,7 +135,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  margin-left: -20px;
+  margin-left: -10px;
   transform: translateY(-110px);
   -webkit-transform: translateY(-110px);
   -moz-transform: translateY(-110px);
