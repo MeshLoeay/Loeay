@@ -60,7 +60,7 @@ body {
   position: absolute;
   width: max-content;
   z-index: 100;
-  top: 85%;
+  top: 92%;
   left: 50%;
   transform: translateX(-50%);
   -webkit-transform: translateX(-50%);
@@ -72,15 +72,24 @@ body {
   text-decoration: none;
 }
 .ta7t h3 {
-  color: red;
-  background-color: white;
-  font-size: 14px;
-  padding: 5px 10px;
-  border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
-  -ms-border-radius: 12px;
-  -o-border-radius: 12px;
+    position: absolute;
+      width: max-content;
+      top: -60px;
+      left: 50%;
+    color: red;
+      background-color: white;
+      font-size: 14px;
+      padding: 5px 10px;
+      border-radius: 12px;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      -ms-border-radius: 12px;
+      -o-border-radius: 12px;
+    transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
 }
 
 .ta7t span {
@@ -120,6 +129,39 @@ body {
   }
 }
 /* End Tal3ny */
+/* Start facebook */
+.facebook {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  margin-left: -20px;
+  transform: translateY(-110px);
+  -webkit-transform: translateY(-110px);
+  -moz-transform: translateY(-110px);
+  -ms-transform: translateY(-110px);
+  -o-transform: translateY(-110px);
+}
+
+.facebook a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.facebook a:first-child img {
+  transform: translateY(8px);
+  margin-right: 10px;
+}
+
+.facebook a:last-child img {
+  transform: translateY(10px);
+  border-radius: 15px;
+  margin-right: 10px;
+}
+
+/* End Facebook */
 .parent {
   display: flex;
   justify-content: center;
