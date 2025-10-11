@@ -94,14 +94,15 @@ body {
 
 .ta7t span {
     color: white;
-      display: block;
+    display: block;
       font-size: 30px;
       border: none;
-    transform: rotate(90deg) translateX(10px);
-      -webkit-transform: rotate(90deg) translateX(10px);
-      -moz-transform: rotate(90deg) translateX(10px);
-      -ms-transform: rotate(90deg) translateX(10px);
-      -o-transform: rotate(90deg) translateX(10px);
+    padding-left: 20px;
+      transform: rotate(90deg);
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
       animation-name: ta7t;
       animation-duration: 1s;
       animation-iteration-count: infinite;
@@ -160,46 +161,7 @@ body {
 }
 
 /* End Facebook */
-/* Start Me */
-.parent1 .me {
-  font-family: serif;
-  position: relative;
-  color: white;
-  z-index: 10;
-  margin: 65px 0 0 20px;
-  font-size: 14px;
-  text-align: center;
-}
 
-.parent1 .me h1 {
-  margin-bottom: 90px;
-}
-
-/* .parent1 .bloody {
-              width: 50%;
-              z-index: 10;
-              position: absolute;
-              top: 75%;
-              left: 50%;
-              transform: translateX(-50%);
-      } */
-
-.parent1 .me h2 {
-  font-family: "Cairo", serif;
-  font-size: 18px;
-  margin-right: 10px;
-}
-
-.parent1 .me h2:last-of-type {
-  margin-top: 10px;
-}
-
-.parent1 .me h2 span {
-  border: none;
-  font-size: 30px;
-}
-
-/* End Me */
 .parent {
   display: flex;
   justify-content: center;
