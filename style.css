@@ -7,6 +7,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 body {
   font-family: "Cairo", serif;
 }
@@ -31,6 +32,7 @@ body {
     width: 1170px;
   }
 }
+
 /* Start Grand */
 
 /* Start Tal3ny */
@@ -68,44 +70,46 @@ body {
   -ms-transform: translateX(-50%);
   -o-transform: translateX(-50%);
 }
+
 .ta7t a {
   text-decoration: none;
 }
+
 .ta7t h3 {
   width: max-content;
   color: red;
-    background-color: white;
+  background-color: white;
     font-size: 14px;
     padding: 5px 10px;
   position: absolute;
-    top: -60px;
+  top: -60px;
     left: 50%;
-      border-radius: 12px;
-      -webkit-border-radius: 12px;
-      -moz-border-radius: 12px;
-      -ms-border-radius: 12px;
-      -o-border-radius: 12px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
     transform: translateX(-50%);
-      -webkit-transform: translateX(-50%);
-      -moz-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-      -o-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
 }
 
 .ta7t span {
-    color: white;
+  color: white;
     display: block;
-      font-size: 30px;
-      border: none;
+    font-size: 30px;
+    border: none;
     padding-left: 20px;
-      transform: rotate(90deg);
-      -webkit-transform: rotate(90deg);
-      -moz-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-      -o-transform: rotate(90deg);
-      animation-name: ta7t;
-      animation-duration: 1s;
-      animation-iteration-count: infinite;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    animation-name: ta7t;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
 }
 
 @keyframes ta7t {
@@ -128,6 +132,7 @@ body {
     margin-top: 60px;
   }
 }
+
 /* End Tal3ny */
 /* Start facebook */
 .facebook {
@@ -196,9 +201,10 @@ body {
     width: 100%;
     max-width: 500px;
     gap: 5px;
-      scale: 0.95;
+    scale: 0.95;
   }
 }
+
 span {
   padding: 10px 5px;
   border-bottom: 1px solid white;
@@ -227,6 +233,7 @@ span {
     font-size: 17px;
   }
 }
+
 .love {
   width: 400px;
   color: white;
@@ -235,8 +242,9 @@ span {
   justify-content: center;
   align-items: center;
   text-align: center;
-    margin-left: 50px;
+  margin-left: 50px;
 }
+
 @media (max-width: 768px) {
   .love {
     display: flex;
@@ -253,32 +261,32 @@ span {
 .love img {
   width: 100px;
   height: 130px;
-    animation-name: love;
+  animation-name: love;
     animation-duration: 0.8s;
     animation-iteration-count: infinite;
   }
+
 @media (max-width: 768px) {
   .love img {
     margin-top: -30px;
   }
 }
-  
-  @keyframes love {
-  
-    0%,
-    100% {
-      scale: 1;
-    }
-  
-    60% {
-      scale: 1.2;
-    }
-  
-    75% {
-      scale: 1;
-    }
-  
-    90% {
-      scale: 1.2;
-    }
+@keyframes love {
+
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  60% {
+    scale: 1.2;
+  }
+
+  75% {
+    scale: 1;
+  }
+
+  90% {
+    scale: 1.2;
+  }
 }
